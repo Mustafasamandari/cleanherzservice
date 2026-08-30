@@ -1121,8 +1121,38 @@ footer.ch-showcase-footer {
   }
 }
 </style>
+<!-- CleanHerz: global booking CTA -->
+<style id="cleanherz-booking-cta-style">
+  .ch-booking-cta {
+    position: fixed; right: 20px; bottom: 20px; z-index: 9998;
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 52px; padding: 0 18px;
+    border: 1px solid rgba(255,255,255,.22); border-radius: 999px;
+    background: #063b78; color: #fff !important;
+    font: 800 15px/1.1 Manrope, Arial, sans-serif; text-decoration: none !important;
+    box-shadow: 0 14px 34px rgba(5,41,80,.28);
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .ch-booking-cta::before {
+    content: ""; width: 18px; height: 18px; flex: 0 0 18px;
+    border: 2px solid currentColor; border-radius: 4px; box-sizing: border-box;
+    background: linear-gradient(currentColor,currentColor) 3px -3px/2px 6px no-repeat,
+                linear-gradient(currentColor,currentColor) 11px -3px/2px 6px no-repeat,
+                linear-gradient(currentColor,currentColor) 2px 5px/10px 2px no-repeat;
+  }
+  .ch-booking-cta:hover, .ch-booking-cta:focus-visible {
+    background: #052950; transform: translateY(-2px);
+    box-shadow: 0 18px 38px rgba(5,41,80,.34);
+  }
+  .ch-booking-cta:focus-visible { outline: 3px solid #78c850; outline-offset: 3px; }
+  @media (max-width: 600px) {
+    .ch-booking-cta { right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); min-height: 48px; padding: 0 15px; font-size: 14px; box-shadow: 0 10px 28px rgba(5,41,80,.30); }
+  }
+  @media (prefers-reduced-motion: reduce) { .ch-booking-cta { transition: none; } }
+</style>
 </head>
 <body>
+<a class="ch-booking-cta" href="https://cal.com/aliosman/auftrag-ausfuhren" target="_blank" rel="noopener noreferrer" aria-label="Termin online buchen (öffnet in neuem Tab)">Termin buchen</a>
   <header class="site-header">
     <div class="container nav">
       <a aria-label="CleanHerz Startseite" class="brand" href="./index.html#start">
